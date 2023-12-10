@@ -225,6 +225,7 @@
 		};
 
 		factory: partition@7800000 {
+			compatible = "nvmem-cells";
 			label = "factory";
 			reg = <0x7800000 0x400000>;
 			read-only;

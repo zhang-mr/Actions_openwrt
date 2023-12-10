@@ -93,16 +93,6 @@
 				label = "product-info";
 				reg = <0x90000 0x10000>;
 				read-only;
-
-				nvmem-layout {
-					compatible = "fixed-layout";
-					#address-cells = <1>;
-					#size-cells = <1>;
-
-					macaddr_info_8: macaddr@8 {
-						reg = <0x8 0x6>;
-					};
-				};
 			};
 
 			partition@a0000 {
@@ -194,5 +184,15 @@
 			status = "okay";
 			label = "lan1";
 		};
+	};
+};
+
+&info {
+	compatible = "nvmem-cells";
+	#address-cells = <1>;
+	#size-cells = <1>;
+
+	macaddr_info_8: macaddr@8 {
+		reg = <0x8 0x6>;
 	};
 };
