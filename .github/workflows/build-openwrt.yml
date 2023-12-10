@@ -26,7 +26,7 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  DIY_CR6606_KERNEL: ramips
+  DIY_DIR_REMOVE: target/linux/ramips
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -93,8 +93,8 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        rm -rf target/linux/ramips
-        cp -arf $GITHUB_WORKSPACE/$DIY_CR6606_KERNEL target/linux/
+        rm -rf $DIY_DIR_REMOVE
+        cp -arf $GITHUB_WORKSPACE/overlay/* ./
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
