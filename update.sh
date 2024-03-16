@@ -16,6 +16,7 @@ rm -rf ./overlay/*
 mkdir -p ./overlay/include
 mkdir -p ./overlay/target/linux/
 
+cp -arf ${openwrt_dir}/include/kernel-6.1 ./overlay/include/
 cp -arf ${openwrt_dir}/include/kernel-5.15 ./overlay/include/
 cp -arf ${openwrt_dir}/target/linux/generic ./overlay/target/linux/
 cp -arf ${openwrt_dir}/target/linux/ramips ./overlay/target/linux/
