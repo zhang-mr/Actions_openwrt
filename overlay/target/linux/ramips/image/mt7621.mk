@@ -783,6 +783,13 @@ define Device/dlink_dir-2660-a1
 endef
 TARGET_DEVICES += dlink_dir-2660-a1
 
+define Device/dlink_dir-3040-a1
+  $(Device/dlink_dir-xx60-a1)
+  DEVICE_MODEL := DIR-3040
+  DEVICE_VARIANT := A1
+endef
+TARGET_DEVICES += dlink_dir-3040-a1
+
 define Device/dlink_dir-3060-a1
   $(Device/dlink_dir-xx60-a1)
   DEVICE_MODEL := DIR-3060
@@ -2504,6 +2511,7 @@ define Device/ubnt_edgerouter_common
 	ubnt-erx-factory-image $(KDIR)/tmp/$$(KERNEL_INITRAMFS_PREFIX)-factory.tar
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   DEVICE_PACKAGES += -wpad-basic-mbedtls -uboot-envtools
+  DEFAULT := n
 endef
 
 define Device/ubnt_edgerouter-x
